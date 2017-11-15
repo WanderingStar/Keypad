@@ -13,9 +13,10 @@
 		031CA96C1FB8E8C60042A403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031CA96B1FB8E8C60042A403 /* Assets.xcassets */; };
 		031CA96F1FB8E8C60042A403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031CA96D1FB8E8C60042A403 /* LaunchScreen.storyboard */; };
 		031CA9981FB8E9C90042A403 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CA9971FB8E9C90042A403 /* KeypadView.swift */; };
-		031CA99A1FB8E9E70042A403 /* KeypadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031CA9991FB8E9E70042A403 /* KeypadView.xib */; };
+		031CA99A1FB8E9E70042A403 /* IpsumKeypad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031CA9991FB8E9E70042A403 /* IpsumKeypad.xib */; };
 		031CA99C1FB8EDEE0042A403 /* UIButton+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */; };
 		031CA9A71FBC085A0042A403 /* FourField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CA9A61FBC085A0042A403 /* FourField.swift */; };
+		031CA9AB1FBC0A7B0042A403 /* HexKeypad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031CA9AA1FBC0A7B0042A403 /* HexKeypad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +47,10 @@
 		031CA9751FB8E8C60042A403 /* KeypadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeypadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031CA9801FB8E8C70042A403 /* KeypadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeypadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031CA9971FB8E9C90042A403 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
-		031CA9991FB8E9E70042A403 /* KeypadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeypadView.xib; sourceTree = "<group>"; };
+		031CA9991FB8E9E70042A403 /* IpsumKeypad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IpsumKeypad.xib; sourceTree = "<group>"; };
 		031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+style.swift"; sourceTree = "<group>"; };
 		031CA9A61FBC085A0042A403 /* FourField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourField.swift; sourceTree = "<group>"; };
+		031CA9AA1FBC0A7B0042A403 /* HexKeypad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HexKeypad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 				031CA96B1FB8E8C60042A403 /* Assets.xcassets */,
 				031CA96D1FB8E8C60042A403 /* LaunchScreen.storyboard */,
 				031CA9701FB8E8C60042A403 /* Info.plist */,
-				031CA9991FB8E9E70042A403 /* KeypadView.xib */,
+				031CA9AA1FBC0A7B0042A403 /* HexKeypad.xib */,
+				031CA9991FB8E9E70042A403 /* IpsumKeypad.xib */,
 				031CA9971FB8E9C90042A403 /* KeypadView.swift */,
 				031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */,
 				031CA9A61FBC085A0042A403 /* FourField.swift */,
@@ -219,8 +222,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031CA9AB1FBC0A7B0042A403 /* HexKeypad.xib in Resources */,
 				031CA96F1FB8E8C60042A403 /* LaunchScreen.storyboard in Resources */,
-				031CA99A1FB8E9E70042A403 /* KeypadView.xib in Resources */,
+				031CA99A1FB8E9E70042A403 /* IpsumKeypad.xib in Resources */,
 				031CA96C1FB8E8C60042A403 /* Assets.xcassets in Resources */,
 				031CA96A1FB8E8C60042A403 /* Main.storyboard in Resources */,
 			);

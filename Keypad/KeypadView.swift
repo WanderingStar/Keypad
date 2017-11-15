@@ -14,26 +14,32 @@ class KeypadView: UIView {
     var targetTextInput: UITextInput?
     public var selectAllBeforeEditing = true
     
-    static let shared: KeypadView = {
+    static let hex: KeypadView = {
         let instance = KeypadView(frame: CGRect(x: 0, y: 0, width: 0, height: 216))
-        instance.initializeSubviews()
+        instance.initializeSubviews(xibFileName: "HexKeypad")
         return instance
     }()
     
+    static let ipsum: KeypadView = {
+        let instance = KeypadView(frame: CGRect(x: 0, y: 0, width: 0, height: 216))
+        instance.initializeSubviews(xibFileName: "IpsumKeypad")
+        return instance
+    }()
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initializeSubviews()
+        initializeSubviews(xibFileName: "HexKeypad")
         addObservers()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initializeSubviews()
+        initializeSubviews(xibFileName: "HexKeypad")
         addObservers()
     }
     
-    func initializeSubviews() {
-        let xibFileName = "KeypadView"
+    func initializeSubviews(xibFileName: String) {
         let view = Bundle.main.loadNibNamed(xibFileName, owner: self, options: nil)![0] as! UIView
         self.addSubview(view)
         view.frame = self.bounds

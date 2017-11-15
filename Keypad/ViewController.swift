@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        textField.inputView = KeypadView.shared
-        textView.inputView = KeypadView.shared
+        textField.inputView = KeypadView.hex
+        textView.inputView = KeypadView.ipsum
     }
 
     override func didReceiveMemoryWarning() {

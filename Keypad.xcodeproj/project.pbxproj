@@ -101,8 +101,8 @@
 				031CA96B1FB8E8C60042A403 /* Assets.xcassets */,
 				031CA96D1FB8E8C60042A403 /* LaunchScreen.storyboard */,
 				031CA9701FB8E8C60042A403 /* Info.plist */,
-				031CA9971FB8E9C90042A403 /* KeypadView.swift */,
 				031CA9991FB8E9E70042A403 /* KeypadView.xib */,
+				031CA9971FB8E9C90042A403 /* KeypadView.swift */,
 				031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */,
 			);
 			path = Keypad;

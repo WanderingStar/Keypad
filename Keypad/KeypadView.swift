@@ -70,25 +70,16 @@ class KeypadView: UIView {
     
     @IBAction func keyPressed(sender: UIButton) {
         if let targetTextInput = targetTextInput,
-            let selectedTextRange = targetTextInput.selectedTextRange,
             let key = sender.titleLabel?.text,
             key.count > 0
         {
-            targetTextInput.replace(selectedTextRange, withText: key)
+            targetTextInput.insertText(key)
         }
     }
     
     @IBAction func deleteKeyPressed(sender: UIButton) {
-        if let targetTextInput = targetTextInput,
-            let selectedTextRange = targetTextInput.selectedTextRange {
-            if selectedTextRange.isEmpty {
-                if let start = targetTextInput.position(from: selectedTextRange.start, offset: -1),
-                    let rangeToDelete = targetTextInput.textRange(from: start, to: selectedTextRange.end) {
-                    targetTextInput.replace(rangeToDelete, withText: "")
-                }
-            } else {
-                targetTextInput.replace(selectedTextRange, withText: "")
-            }
+        if let targetTextInput = targetTextInput {
+            targetTextInput.deleteBackward()
         }
     }
     

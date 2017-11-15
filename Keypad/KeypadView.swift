@@ -68,25 +68,40 @@ class KeypadView: UIView {
         targetTextInput = nil
     }
     
+    func replaceTextIfShould(input: UITextInput, inRange range: UITextRange, withText text: String) {
+        if input.shouldChangeText?(in: range, replacementText: text) ?? true {
+            input.replace(range, withText: text)
+        }
+    }
+    
     @IBAction func keyPressed(sender: UIButton) {
         if let targetTextInput = targetTextInput,
+            let selectedTextRange = targetTextInput.selectedTextRange,
             let key = sender.titleLabel?.text,
             key.count > 0
         {
-            targetTextInput.insertText(key)
+            replaceTextIfShould(input: targetTextInput, inRange: selectedTextRange, withText: key)
         }
     }
     
     @IBAction func deleteKeyPressed(sender: UIButton) {
-        if let targetTextInput = targetTextInput {
-            targetTextInput.deleteBackward()
+        if let targetTextInput = targetTextInput,
+            let selectedTextRange = targetTextInput.selectedTextRange {
+            if selectedTextRange.isEmpty {
+                if let start = targetTextInput.position(from: selectedTextRange.start, offset: -1),
+                    let rangeToDelete = targetTextInput.textRange(from: start, to: selectedTextRange.end) {
+                    replaceTextIfShould(input: targetTextInput, inRange: rangeToDelete, withText: "")
+                }
+            } else {
+                replaceTextIfShould(input: targetTextInput, inRange: selectedTextRange, withText: "")
+            }
         }
     }
     
     @IBAction func clearKeyPressed(sender: UIButton) {
         if let targetTextInput = targetTextInput,
             let rangeToDelete = targetTextInput.textRange(from: targetTextInput.beginningOfDocument, to: targetTextInput.endOfDocument) {
-            targetTextInput.replace(rangeToDelete, withText: "")
+            replaceTextIfShould(input: targetTextInput, inRange: rangeToDelete, withText: "")
         }
     }
     

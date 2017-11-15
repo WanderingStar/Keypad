@@ -15,6 +15,7 @@
 		031CA9981FB8E9C90042A403 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CA9971FB8E9C90042A403 /* KeypadView.swift */; };
 		031CA99A1FB8E9E70042A403 /* KeypadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031CA9991FB8E9E70042A403 /* KeypadView.xib */; };
 		031CA99C1FB8EDEE0042A403 /* UIButton+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */; };
+		031CA9A71FBC085A0042A403 /* FourField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CA9A61FBC085A0042A403 /* FourField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		031CA9971FB8E9C90042A403 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
 		031CA9991FB8E9E70042A403 /* KeypadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeypadView.xib; sourceTree = "<group>"; };
 		031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+style.swift"; sourceTree = "<group>"; };
+		031CA9A61FBC085A0042A403 /* FourField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				031CA9991FB8E9E70042A403 /* KeypadView.xib */,
 				031CA9971FB8E9C90042A403 /* KeypadView.swift */,
 				031CA99B1FB8EDEE0042A403 /* UIButton+style.swift */,
+				031CA9A61FBC085A0042A403 /* FourField.swift */,
 			);
 			path = Keypad;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				031CA9981FB8E9C90042A403 /* KeypadView.swift in Sources */,
 				031CA9671FB8E8C60042A403 /* ViewController.swift in Sources */,
 				031CA9651FB8E8C60042A403 /* AppDelegate.swift in Sources */,
+				031CA9A71FBC085A0042A403 /* FourField.swift in Sources */,
 				031CA99C1FB8EDEE0042A403 /* UIButton+style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

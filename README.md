@@ -15,5 +15,6 @@ Bonuses...
 - Uses Notifications, so your text input views don't need to implement anything special
 - Delete, Clear, and Done special key examples
 - Swift 4
+- Simple example of multiple keypads. In real usage, consider a subclass
 
 ![screenshot](screenshot.png)

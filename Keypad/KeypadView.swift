@@ -58,9 +58,14 @@ class KeypadView: UIView {
     }
     
     @objc func editingDidBegin(notification: Notification) {
-        guard let textInput = notification.object as? UITextInput else {
-            targetTextInput = nil
-            return
+        guard let textInput = notification.object as? UITextInput,
+            // Only update the target if this is the inputView
+            let target = notification.object as? UIView,
+            let inputView = target.inputView,
+            inputView == self
+            else {
+                targetTextInput = nil
+                return
         }
         targetTextInput = textInput
         if selectAllBeforeEditing {

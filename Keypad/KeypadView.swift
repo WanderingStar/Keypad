@@ -44,7 +44,7 @@ class KeypadView: UIView {
         self.addSubview(view)
         view.frame = self.bounds
     }
-
+    
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.editingDidBegin), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.editingDidEnd), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: nil)
@@ -64,14 +64,24 @@ class KeypadView: UIView {
         }
         targetTextInput = textInput
         if selectAllBeforeEditing {
-        textInput.selectedTextRange = textInput.textRange(
-            from: textInput.beginningOfDocument,
-            to: textInput.endOfDocument)
+            DispatchQueue.main.async {
+                textInput.selectedTextRange = textInput.textRange(
+                    from: textInput.beginningOfDocument,
+                    to: textInput.endOfDocument)
+            }
         }
     }
     
     @objc func editingDidEnd(notification: Notification) {
-        targetTextInput = nil
+        if notification.object as AnyObject === targetTextInput as AnyObject {
+            if let targetTextInput = targetTextInput {
+                // if we don't deselect all here, it makes it impossible to begin editing with a single tap a second time
+                DispatchQueue.main.async {
+                    targetTextInput.selectedTextRange = targetTextInput.textRange(from: targetTextInput.beginningOfDocument, to: targetTextInput.beginningOfDocument)
+                }
+            }
+            targetTextInput = nil
+        }
     }
     
     func replaceTextIfShould(input: UITextInput, inRange range: UITextRange, withText text: String) {
@@ -116,5 +126,5 @@ class KeypadView: UIView {
             targetTextInput.resignFirstResponder()
         }
     }
-
+    
 }
